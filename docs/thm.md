@@ -20,7 +20,7 @@ Encontramos tres puertos abiertos: **tcp, ssh y http**.
 
 La **versión de nginx** es: la 1.16.1
 
-## Directory listing
+## Directory fuzzing
 
 Ahora vamos a hacer fuzzing a los directorios de la máquina:
 
@@ -52,10 +52,10 @@ Buscamos en el código fuente de la máquina por la palabra “flag”:
 
 Encontramos uno
 
-![img_7.png](img_7.png)
+![flag1.png](flag1.png)
 
 
-flag{9fdafbd64c47471a8f54cd3fc64cd312}
+
 
 ![img_8.png](img_8.png)
 
@@ -85,7 +85,7 @@ Decodeamos para ver qué es:
 
 
 
-Nos proporciona lo que parece un directorio con la famosa canción de Metallica  lml:
+Nos proporciona lo que parece un directorio con la famosa canción de Metallica (lml):
 
 /n0th1ng3ls3m4tt3r
 
