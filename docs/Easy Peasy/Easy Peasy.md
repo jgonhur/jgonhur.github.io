@@ -10,7 +10,7 @@ nmap -p- -sV <ip_de_la_maquina>
 
 Pero nos muestra nada más que el puerto 80 abierto.
 
-![Untitled](Easy%20Peasy%20d4134bfcc4044fd1bf4e8ca29482b82d/Untitled.png)
+![Untitled](Easy%20Peasy/Untitled.png)
 
 Por tanto, vamos a probar con un scan más intenso, buscando, ya de paso, las versiones de los servicios de los puertos abiertos:
 
@@ -18,7 +18,7 @@ Por tanto, vamos a probar con un scan más intenso, buscando, ya de paso, las ve
 nmap -p- -sV 10.10.97.186
 ```
 
-![Untitled](Easy%20Peasy%20d4134bfcc4044fd1bf4e8ca29482b82d/Untitled%201.png)
+![Untitled](Easy%20Peasy/Untitled%201.png)
 
 Encontramos tres puertos abiertos: tcp, ssh y http.
 

