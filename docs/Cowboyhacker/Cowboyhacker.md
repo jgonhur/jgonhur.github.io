@@ -134,7 +134,7 @@ pwd:
 3. **Directory fuzzing:**
 
 ```bash
-gobuster dir -u [http://](http://10.10.63.5/)<ipdelamaquina>-w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+gobuster dir -u http://<ipdelamaquina> -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
 ```
 
 **Directorios obtenidos:**
