@@ -115,9 +115,7 @@ Obtenemos la siguiente imagen:
 
 ![Untitled](Lian%20Yu%204099d05c64cd49f5be2f30286eb2973c/Untitled%2015.png)
 
-
 ## Esteganografía
-
 
 A continuación extraeremos información de la imagen aa.jpg con steghide y usamos el salvoconducto proporcionado por la imagen de arriba:
 
