@@ -135,6 +135,52 @@ En passwd.txt encontramos un texto:
 
 ![Untitled](Lian%20Yu%204099d05c64cd49f5be2f30286eb2973c/Untitled%2018.png)
 
-En shado encontramos lo que parece un salvoconducto o contraseña:
+En el fichero shado encontramos lo que parece un salvoconducto o contraseña:
 
 ![Untitled](Lian%20Yu%204099d05c64cd49f5be2f30286eb2973c/Untitled%2019.png)
+
+# SSH
+
+## **Ganando acceso a SSH**
+
+Para acceder al SSH vamos a usar el otro usuario que podemos encontrar en el servidor FPT:
+
+![Untitled](Lian%20Yu%204099d05c64cd49f5be2f30286eb2973c/Untitled%2020.png)
+
+Y para la contraseña usaremos el fichero **[shado](https://www.notion.so/Lian-Yu-4099d05c64cd49f5be2f30286eb2973c)**, que se encontraba en el archivo comprimido ss.zip:
+
+### Acceso a SSH
+
+![Untitled](Lian%20Yu%204099d05c64cd49f5be2f30286eb2973c/Untitled%2021.png)
+
+## user.txt
+
+Una vez dentro del SSH, listamos el directorio para ver el contenido del directorio actual.
+
+Nos encontramos con el fichero user.txt, en el cual se encuentra la flag:
+
+![Untitled](Lian%20Yu%204099d05c64cd49f5be2f30286eb2973c/Untitled%2022.png)
+
+# Escalada de privilegios
+
+A continuación, vamos a buscar el fichero root.txt.
+
+Primero averiguamos qué comandos puede usar el usuario actual como root:
+
+```bash
+sudo -l
+```
+
+Obtenemos como resultado que podemos usar el programa pkexec:
+
+![Untitled](Lian%20Yu%204099d05c64cd49f5be2f30286eb2973c/Untitled%2023.png)
+
+Usaremos pkexec para abrir una terminal como root (pkexec nos permite ejecutar un programa como si fuéramos otro usuario):
+
+![Untitled](Lian%20Yu%204099d05c64cd49f5be2f30286eb2973c/Untitled%2024.png)
+
+## root.txt
+
+Dentro del fichero root.txt encontramos la flag:
+
+![Untitled](Lian%20Yu%204099d05c64cd49f5be2f30286eb2973c/Untitled%2025.png)
